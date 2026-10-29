@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Baba – Free online video &amp; image editor</title>
+<meta name="description" content="Edit videos and photos in your browser. Animations, text styles, filters and export. Free, private, no sign-up.">
+<style>
+:root{color-scheme:light;--bg:#f4f5f8;--p:#fff;--p2:#f1f2f5;--bd:#e2e4ea;--t:#1a1a1f;--m:#6f727c;--a:#111;--pt:#fff;--c1:#6b7cff;--c2:#3fa5c7;--sh:#0002;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html.dark{color-scheme:dark;--bg:#0b0b0d;--p:#161618;--p2:#232326;--bd:#2c2c30;--t:#f4f4f5;--m:#8a8a92;--a:#fff;--pt:#000;--c1:#7c8cff;--c2:#4fd1c5;--sh:#0008}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--t);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--bd)}
+nav .wrap{display:flex;align-items:center;gap:20px;height:60px}.logo{font-weight:800;font-size:22px;letter-spacing:-.02em}.sp{flex:1}
+nav a.l{color:var(--m);font-size:14px}nav a.l:hover{color:var(--t)}
+.btn{display:inline-block;background:var(--a);color:var(--pt);padding:10px 20px;border-radius:8px;font:700 15px system-ui;border:1px solid var(--a);cursor:pointer}
+.btn.o{background:transparent;color:var(--t);border-color:var(--bd)}.btn.o:hover{border-color:var(--a)}.btn:hover{opacity:.9}.btn.s{padding:7px 14px;font-size:14px}
+#thm{background:var(--p);color:var(--t);border:1px solid var(--bd);border-radius:8px;padding:7px 10px;cursor:pointer;font:14px system-ui}
+.hero{text-align:center;padding:76px 0 30px;position:relative}
+.hero::before{content:"";position:absolute;inset:-40px 10% auto;height:380px;background:radial-gradient(closest-side,color-mix(in srgb,var(--c1) 28%,transparent),transparent),radial-gradient(closest-side at 70% 60%,color-mix(in srgb,var(--c2) 22%,transparent),transparent);filter:blur(30px);z-index:-1}
+.hero h1{font-size:clamp(36px,6.4vw,68px);line-height:1.06;letter-spacing:-.035em;margin:0 auto 16px;max-width:820px}
+.grad{background:linear-gradient(90deg,var(--c1),var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--m);font-size:19px;max-width:580px;margin:0 auto 26px}.cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.tag{display:inline-block;border:1px solid var(--bd);background:var(--p);border-radius:99px;padding:4px 14px;font-size:13px;color:var(--m);margin-bottom:18px}
+.stats{display:flex;justify-content:center;gap:34px;flex-wrap:wrap;margin:38px 0 0;color:var(--m);font-size:14px}.stats b{display:block;color:var(--t);font-size:24px;letter-spacing:-.02em}
+section{padding:60px 0}h2{font-size:clamp(26px,4vw,38px);letter-spacing:-.02em;margin:0 0 8px;text-align:center}.sub{color:var(--m);text-align:center;margin:0 auto 34px;max-width:540px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.prod{background:var(--p);border:1px solid var(--bd);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.prod:hover{transform:translateY(-4px);box-shadow:0 18px 40px var(--sh)}.prod .pv{height:200px;position:relative;overflow:hidden;border-bottom:1px solid var(--bd)}
+.prod .tx{padding:20px}.prod h3{margin:0 0 6px;font-size:22px}.prod p{margin:0 0 14px;color:var(--m)}.prod ul{margin:0 0 16px;padding-left:18px;color:var(--m);font-size:14.5px}
+.pv.vid{background:linear-gradient(#5b8cff,#c77dff 60%,#2b1b4a 61%)}.pv.vid::before{content:"";position:absolute;right:18%;top:20%;width:46px;height:46px;border-radius:50%;background:#ffe08a}
+.pv.vid .tl{position:absolute;left:14px;right:14px;bottom:12px;height:34px;background:#0006;border-radius:8px}.pv.vid .tl i{position:absolute;top:5px;bottom:5px;border-radius:5px;background:linear-gradient(90deg,#6b7cff,#3fa5c7)}
+.pv.vid .tl em{position:absolute;top:0;bottom:0;width:2px;background:#fff;animation:ph 5s linear infinite}@keyframes ph{from{left:4%}to{left:94%}}
+.pv.vid .cap{position:absolute;left:50%;top:44%;translate:-50% 0;background:#e11d48;color:#fff;font-weight:800;padding:2px 14px;border-radius:6px;animation:pop 2.4s ease-in-out infinite}@keyframes pop{0%,100%{scale:1}50%{scale:1.12}}
+.pv.img{display:grid;grid-template-columns:repeat(3,1fr)}
+.pv.img i:nth-child(1){background:linear-gradient(135deg,#ff9a9e,#fad0c4)}.pv.img i:nth-child(2){background:linear-gradient(135deg,#a1c4fd,#c2e9fb);filter:grayscale(.9) contrast(1.2)}.pv.img i:nth-child(3){background:linear-gradient(135deg,#f6d365,#fda085);filter:sepia(.6)}
+.pv.img span{position:absolute;inset:0;display:grid;place-items:center;font-size:44px}
+.show{background:var(--p);border:1px solid var(--bd);border-radius:16px;padding:26px;margin-bottom:16px}.show h3{margin:0 0 14px;font-size:13px;color:var(--m);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.chips{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:center;background:#1c1c24;border-radius:12px;padding:26px 14px}
+.chips span{font:800 30px system-ui;color:#fff}
+.n{text-shadow:0 0 6px #fff,0 0 16px #ff2ec4,0 0 34px #ff2ec4}.o2{font-family:Impact,sans-serif!important;font-weight:400!important;-webkit-text-stroke:5px #000;paint-order:stroke fill}.gr{background:linear-gradient(#ffb347,#ff3d81);-webkit-background-clip:text;background-clip:text;color:transparent!important}
+.r{font-family:Impact,sans-serif!important;font-weight:400!important;color:#ffe600!important;text-shadow:3px 3px #ff3d81,6px 6px #7b5cff}.bx{background:#e11d48;padding:0 14px;border-radius:8px}.gl{text-shadow:3px 0 #ff0040,-3px 0 #00f0ff}.gd{font-family:Georgia,serif!important;background:linear-gradient(#fff3b0,#d4a017);-webkit-background-clip:text;background-clip:text;color:transparent!important}
+.anis{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px}.anis div{text-align:center;font-size:13px;color:var(--m)}
+.anis i{display:block;width:44px;height:44px;margin:0 auto 8px;border-radius:10px;background:linear-gradient(135deg,var(--c1),var(--c2))}
+.a1 i{animation:a1 2s ease-in-out infinite}.a2 i{animation:a2 2s ease-in-out infinite}.a3 i{animation:a3 2.4s linear infinite}.a4 i{animation:a4 1.4s ease-in-out infinite}.a5 i{animation:a5 1.6s ease-in-out infinite}.a6 i{animation:a6 2s ease-in-out infinite}
+@keyframes a1{0%,100%{opacity:0}40%,70%{opacity:1}}@keyframes a2{0%,100%{translate:-22px}50%{translate:22px}}@keyframes a3{to{rotate:360deg}}@keyframes a4{0%,100%{scale:1}50%{scale:1.35}}@keyframes a5{0%,100%{translate:0 0}50%{translate:0 -16px}}@keyframes a6{0%,100%{filter:blur(0)}50%{filter:blur(6px)}}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.card{background:var(--p);border:1px solid var(--bd);border-radius:12px;padding:20px}.card .ic{font-size:26px}.card h3{margin:8px 0 4px;font-size:17px}.card p{margin:0;color:var(--m);font-size:14.5px}
+.steps{counter-reset:s}.steps .card{position:relative;padding-top:26px}.steps .card::before{counter-increment:s;content:counter(s);position:absolute;top:-14px;left:18px;width:30px;height:30px;border-radius:50%;background:var(--a);color:var(--pt);display:grid;place-items:center;font-weight:800}
+details{background:var(--p);border:1px solid var(--bd);border-radius:12px;padding:14px 18px;margin:0 auto 10px;max-width:720px}summary{cursor:pointer;font-weight:600}details p{margin:8px 0 0;color:var(--m)}
+.band{background:var(--p);border:1px solid var(--bd);border-radius:18px;text-align:center;padding:52px 20px}.band h2{margin-bottom:8px}.band p{color:var(--m);margin:0 0 20px}
+footer{border-top:1px solid var(--bd);padding:28px 0;color:var(--m);font-size:14px}footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}footer a:hover{color:var(--t)}
+@media(max-width:700px){nav a.l{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.demo{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px;align-items:start}@media(max-width:800px){.demo{grid-template-columns:1fr}}
+.dstage{position:relative;aspect-ratio:16/10;border-radius:16px;overflow:hidden;border:1px solid var(--bd);background:#111;transition:filter .3s}
+.dscene{position:absolute;inset:0;background:#111}.dscene img{width:100%;height:100%;object-fit:cover;display:block}
+.dobj{position:absolute;left:0;right:0;bottom:10%;text-align:center;font:800 clamp(30px,7vw,60px) system-ui;color:#fff;letter-spacing:-.02em;text-shadow:0 2px 12px #0008;pointer-events:none}
+.dov{position:absolute;inset:0;pointer-events:none;transition:opacity .3s;opacity:0}.dov.on{opacity:1}
+.dv{background:radial-gradient(ellipse at center,#0000 45%,#000d 100%)}.dg{background:repeating-linear-gradient(0deg,#0000 0 2px,#0005 2px 3px);mix-blend-mode:multiply}.dgl{background:linear-gradient(200deg,#ffb34777,#ff7b0033 60%,#0000);mix-blend-mode:soft-light}
+.dpanel h3{margin:0 0 8px;font-size:13px;color:var(--m);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.dpanel .row{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px}
+.dc{background:var(--p);color:var(--t);border:1px solid var(--bd);border-radius:99px;padding:6px 13px;font:600 13.5px system-ui;cursor:pointer}.dc:hover{border-color:var(--a)}.dc.on{background:var(--a);color:var(--pt);border-color:var(--a)}
+.dnote{color:var(--m);font-size:13.5px;margin:0}
+.dgal{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:10px;margin-top:22px}.dgal button{padding:0;border:2px solid transparent;border-radius:10px;overflow:hidden;background:var(--p);cursor:pointer;color:var(--t);font:600 12px system-ui}.dgal img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}.dgal span{display:block;padding:5px 0}.dgal button.on{border-color:var(--a)}
+.dtools{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.dtools input[type=text]{flex:1;min-width:120px;padding:7px 12px;border-radius:99px;border:1px solid var(--bd);background:var(--p);color:var(--t);font:14px system-ui}
+</style></head><body>
+<nav><div class="wrap"><a class="logo" href="#top">Baba</a><span class="sp"></span><a class="l" href="#editors">Editors</a><a class="l" href="#show">Showcase</a><a class="l" href="#features">Features</a><a class="l" href="#faq">FAQ</a><button id="thm" aria-label="Toggle theme">🌙</button><a class="btn s" href="Baba_Video_Editor_white.html">Start editing</a></div></nav>
+
+<header class="hero wrap" id="top">
+<span class="tag">Free · Private · No sign-up</span>
+<h1>Edit videos and photos <span class="grad">right in your browser.</span></h1>
+<p>Animations, text styles, filters and effects in two simple editors. Everything runs on your device, so your files never leave it.</p>
+<div class="cta"><a class="btn" href="Baba_Video_Editor_white.html">🎬 Edit a video</a><a class="btn o" href="Baba_Image_Editor.html">🖼 Edit an image</a></div>
+<div class="stats"><div><b>1,500+</b>animations</div><div><b>27</b>text styles</div><div><b>14</b>photo filters</div><div><b>0</b>uploads</div></div>
+</header>
+
+<section id="editors"><div class="wrap"><h2>Pick your editor</h2><p class="sub">Two tools, one clean look, and a switch between white and dark.</p>
+<div class="two">
+<a class="prod" href="Baba_Video_Editor_white.html"><div class="pv vid"><span class="cap">BABA</span><div class="tl"><i style="left:3%;width:38%"></i><i style="left:44%;width:28%"></i><i style="left:75%;width:21%"></i><em></em></div></div><div class="tx"><h3>Video editor</h3><p>Trim, split and polish clips with motion and style.</p><ul><li>1,500+ In, Out and Combo animations with search</li><li>27 text styles and effects</li><li>Audio tools and video export</li></ul><span class="btn">Open video editor →</span></div></a>
+<a class="prod" href="Baba_Image_Editor.html"><div class="pv img"><i></i><i></i><i></i><span>✨</span></div><div class="tx"><h3>Image editor</h3><p>Make photos pop in a few taps.</p><ul><li>14 filters and 8 adjustment sliders</li><li>Crop ratios, text, stickers and drawing</li><li>One-click PNG export</li></ul><span class="btn">Open image editor →</span></div></a>
+</div></div></section>
+
+<section id="show" style="padding-top:20px"><div class="wrap"><h2>See the styles</h2><p class="sub">A taste of what you can add to your clips and photos.</p>
+<div class="show"><h3>Text styles</h3><div class="chips"><span class="n">Neon</span><span class="o2">Outline</span><span class="gr">Gradient</span><span class="r">Retro 3D</span><span class="bx">Box</span><span class="gl">Glitch</span><span class="gd">Gold</span></div></div>
+<div class="show"><h3>Animations</h3><div class="anis"><div class="a1"><i></i>Fade</div><div class="a2"><i></i>Slide</div><div class="a3"><i></i>Spin</div><div class="a4"><i></i>Pulse</div><div class="a5"><i></i>Bounce</div><div class="a6"><i></i>Blur</div></div></div>
+</div></section>
+
+<section id="live" style="padding-top:20px"><div class="wrap"><h2>Try it live</h2><p class="sub">Tap an animation, a text style, a filter or an effect on a photo. Use the sample, or add your own photo and see it on that.</p>
+<div class="demo"><div><div class="dstage" id="dst"><div class="dscene" id="dsc"><img id="dimg" alt="Sample photo"><span class="dobj" id="dob">BABA</span></div><div class="dov dv" id="o-vig"></div><div class="dov dg" id="o-vhs"></div><div class="dov dgl" id="o-gold"></div></div>
+<div class="dtools"><label class="dc" style="cursor:pointer">📷 Use my photo<input id="dfile" type="file" accept="image/*" hidden></label><button class="dc" id="dreset">Sample photo</button><input type="text" id="dcap" value="BABA" maxlength="24" aria-label="Caption text"></div></div>
+<div class="dpanel"><h3>Animations</h3><div class="row" id="da"></div><h3>Text styles</h3><div class="row" id="dt"></div><h3>Effects</h3><div class="row" id="de"></div><p class="dnote">Your photo never leaves your device. Effects can be combined with filters.</p></div></div>
+<h3 style="margin:26px 0 0;font-size:13px;color:var(--m);font-weight:600;text-transform:uppercase;letter-spacing:.06em">Photo filters</h3><div class="dgal" id="dg"></div></div></section>
+
+<section id="features"><div class="wrap"><h2>Everything you need</h2><p class="sub">Familiar tools if you have used popular mobile editors.</p>
+<div class="grid">
+<div class="card"><div class="ic">✂️</div><h3>Trim &amp; split</h3><p>Cut and rearrange clips on a simple timeline.</p></div>
+<div class="card"><div class="ic">✨</div><h3>Effects &amp; filters</h3><p>Colour looks, overlays and particle effects with live preview.</p></div>
+<div class="card"><div class="ic">🔊</div><h3>Audio tools</h3><p>Volume, EQ, voice effects and audio extraction.</p></div>
+<div class="card"><div class="ic">🎨</div><h3>Stickers &amp; drawing</h3><p>Add emoji stickers and draw right on your photos.</p></div>
+<div class="card"><div class="ic">🌗</div><h3>White &amp; dark</h3><p>Switch themes any time. Your choice is remembered.</p></div>
+<div class="card"><div class="ic">🔒</div><h3>Private by design</h3><p>Everything happens in your browser. Nothing is uploaded.</p></div>
+</div></div></section>
+
+<section id="how"><div class="wrap"><h2>Three steps</h2><p class="sub">No installs, no account.</p>
+<div class="grid steps"><div class="card"><h3>Import</h3><p>Open an editor and choose a video or photo from your device.</p></div><div class="card"><h3>Edit</h3><p>Add animations, text, filters and effects. Every option previews instantly.</p></div><div class="card"><h3>Export</h3><p>Save your video, frame, audio or image. Keep the tab open while a video exports.</p></div></div></div></section>
+
+<section id="faq"><div class="wrap"><h2>Questions</h2><p class="sub">Quick answers.</p>
+<details><summary>Is it really free?</summary><p>Yes. There are no watermarks and no accounts.</p></details>
+<details><summary>Are my files uploaded anywhere?</summary><p>No. Editing and export happen entirely in your browser.</p></details>
+<details><summary>Which browser works best?</summary><p>A recent version of Chrome, Edge or Firefox on a computer.</p></details>
+<details><summary>How long does a video export take?</summary><p>It records in real time, so it takes about as long as the video. Keep the tab open until it finishes.</p></details>
+</div></section>
+
+<section style="padding-top:10px"><div class="wrap"><div class="band"><h2>Ready to make something?</h2><p>Pick an editor and start in seconds.</p><div class="cta"><a class="btn" href="Baba_Video_Editor_white.html">Open video editor</a><a class="btn o" href="Baba_Image_Editor.html">Open image editor</a></div></div></div></section>
+
+<footer><div class="wrap"><span><b style="color:var(--t)">Baba</b> · Video &amp; Image Editor</span><span><a href="Baba_Video_Editor_white.html">Video editor</a> · <a href="Baba_Image_Editor.html">Image editor</a> · <a href="Baba_Video_Editor_white.html#help">Help</a> · <a href="#top">Back to top</a></span></div></footer>
+<script>
+(()=>{const b=document.getElementById('thm'),R=document.documentElement,set=d=>{R.classList.toggle('dark',d);b.textContent=d?'☀️':'🌙';try{localStorage.setItem('baba-theme',d?'d':'l')}catch(e){}};
+let d=matchMedia('(prefers-color-scheme: dark)').matches;try{const v=localStorage.getItem('baba-theme');if(v)d=v=='d'}catch(e){}set(d);b.onclick=()=>set(!R.classList.contains('dark'))})();
+</script><script>
+(()=>{const $=i=>document.getElementById(i),ob=$('dob'),st=$('dst'),sc=$('dsc'),rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500"><defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b3a8c"/><stop offset=".45" stop-color="#e0749b"/><stop offset=".72" stop-color="#ffc27a"/></linearGradient><linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3a46b"/><stop offset="1" stop-color="#2c2f6b"/></linearGradient><radialGradient id="g"><stop offset="0" stop-color="#fff6c8"/><stop offset=".35" stop-color="#ffd27a" stop-opacity=".8"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient><filter id="b"><feGaussianBlur stdDeviation="9"/></filter></defs><rect width="800" height="500" fill="url(#s)"/><circle cx="560" cy="290" r="170" fill="url(#g)"/><circle cx="560" cy="290" r="40" fill="#fff4c4"/><g fill="#fff" opacity=".45" filter="url(#b)"><ellipse cx="170" cy="110" rx="120" ry="18"/><ellipse cx="330" cy="150" rx="90" ry="12"/><ellipse cx="640" cy="90" rx="110" ry="14"/></g><path d="M0 330 L120 220 L210 290 L330 170 L460 300 L560 240 L680 310 L800 230 V340 H0Z" fill="#59508f"/><path d="M0 350 L90 290 L190 340 L300 270 L420 345 L540 295 L660 350 L800 300 V360 H0Z" fill="#2f2c63"/><rect y="350" width="800" height="150" fill="url(#w)"/><g opacity=".5" fill="#fff4c4"><rect x="520" y="365" width="80" height="4" rx="2"/><rect x="530" y="385" width="60" height="4" rx="2"/><rect x="540" y="405" width="40" height="4" rx="2"/></g><g fill="#15163a"><path d="M40 360 L70 270 L100 360Z"/><path d="M70 360 L105 250 L140 360Z"/><path d="M130 360 L158 285 L186 360Z"/><path d="M680 360 L712 262 L744 360Z"/><path d="M730 360 L760 280 L790 360Z"/></g><path d="M300 130 q12 -12 24 0 q12 -12 24 0" stroke="#15163a" stroke-width="3" fill="none"/><path d="M380 100 q9 -9 18 0 q9 -9 18 0" stroke="#15163a" stroke-width="3" fill="none"/></svg>`;
+const SAMPLE='data:image/svg+xml,'+encodeURIComponent(svg);
+const FT={Original:'',Vivid:'contrast(1.15) saturate(1.5)',Warm:'saturate(1.1) sepia(.28) hue-rotate(-10deg)',Cool:'hue-rotate(15deg) saturate(.9) brightness(1.05)','B&W':'grayscale(1) contrast(1.15)',Noir:'grayscale(1) contrast(1.45) brightness(.85)',Vintage:'sepia(.6) contrast(.9) brightness(1.05)',Fade:'contrast(.8) brightness(1.15) saturate(.8)',Drama:'contrast(1.4) saturate(.9) brightness(.9)',Pastel:'brightness(1.15) saturate(.7) contrast(.9)',Sunset:'sepia(.3) hue-rotate(-20deg) saturate(1.3)',Neon:'contrast(1.3) saturate(1.8) hue-rotate(20deg)',Glow:'brightness(1.15) blur(1px) saturate(1.2)',Dream:'brightness(1.1) contrast(.9) blur(1.5px) saturate(1.1)'};
+const AN={Fade:[{opacity:0},{opacity:1}],'Slide Left':[{transform:'translateX(-100%)'},{transform:'none'}],'Slide Up':[{transform:'translateY(100%)'},{transform:'none'}],Zoom:[{transform:'scale(0)',opacity:0},{transform:'scale(1)',opacity:1}],Spin:[{transform:'rotate(-360deg) scale(.2)',opacity:0},{transform:'none',opacity:1}],Bounce:[{transform:'translateY(-110%)'},{transform:'translateY(0)',offset:.5},{transform:'translateY(-14%)',offset:.68},{transform:'translateY(0)',offset:.82},{transform:'translateY(-4%)',offset:.92},{transform:'none'}],Blur:[{filter:'blur(26px)',opacity:0},{filter:'blur(0)',opacity:1}],Pop:[{transform:'scale(0)'},{transform:'scale(1.15)',offset:.6},{transform:'scale(.96)',offset:.8},{transform:'scale(1)'}],Elastic:[{transform:'translateX(100%)'},{transform:'translateX(-12%)',offset:.3},{transform:'translateX(6%)',offset:.5},{transform:'translateX(-2%)',offset:.7},{transform:'none'}],Jello:[{transform:'none'},{transform:'scale(1.1,.92)',offset:.25},{transform:'scale(.94,1.06)',offset:.5},{transform:'scale(1.03,.98)',offset:.75},{transform:'none'}],Flicker:[{opacity:0},{opacity:1,offset:.2},{opacity:.2,offset:.35},{opacity:1,offset:.55},{opacity:.4,offset:.7},{opacity:1}],Shake:[{transform:'translateX(0)'},{transform:'translateX(-3%)',offset:.2},{transform:'translateX(3%)',offset:.4},{transform:'translateX(-2%)',offset:.6},{transform:'translateX(1%)',offset:.8},{transform:'none'}]};
+const TS={Plain:'',Neon:'n',Outline:'o2',Gradient:'gr','Retro 3D':'r',Glitch:'gl',Gold:'gd',Box:'bx'};
+const EF={Sepia:'sepia(.85)','Soft glow':'brightness(1.12) saturate(1.2) blur(.8px)',Invert:'invert(1)','Hue shift':'hue-rotate(60deg) saturate(1.3)',Vignette:'#o-vig',Scanlines:'#o-vhs','Golden hour':'#o-gold'};
+const OVM={Vignette:'o-vig',Scanlines:'o-vhs','Golden hour':'o-gold'};
+const on=new Set();let flt='';
+const paint=()=>{st.style.filter=[flt,...[...on].map(n=>EF[n]).filter(v=>v[0]!='#')].filter(Boolean).join(' ')};
+const mk=(id,list,fn)=>{const r=$(id);Object.keys(list).forEach(k=>{const b=document.createElement('button');b.className='dc';b.textContent=k;b.onclick=()=>fn(k,b);r.appendChild(b)})};
+const only=(id,b)=>document.querySelectorAll('#'+id+' .dc').forEach(x=>x.classList.toggle('on',x==b));
+mk('da',AN,(k,b)=>{if(!rm)sc.animate(AN[k],{duration:/Bounce|Elastic|Jello/.test(k)?1100:800,easing:'ease-out'});only('da',b)});
+mk('dt',TS,(k,b)=>{ob.className='dobj'+(TS[k]?' '+TS[k]:'');only('dt',b)});
+mk('de',EF,(k,b)=>{on.has(k)?on.delete(k):on.add(k);b.classList.toggle('on',on.has(k));if(OVM[k])$(OVM[k]).classList.toggle('on',on.has(k));paint()});
+const g=$('dg');Object.keys(FT).forEach(k=>{const b=document.createElement('button');b.innerHTML='<img alt="" style="filter:'+(FT[k]||'none')+'"><span>'+k+'</span>';b.onclick=()=>{flt=FT[k];paint();g.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x==b))};g.appendChild(b)});
+g.firstChild.classList.add('on');
+const setSrc=u=>{$('dimg').src=u;g.querySelectorAll('img').forEach(i=>i.src=u)};setSrc(SAMPLE);
+$('dfile').onchange=e=>{const f=e.target.files[0];if(f)setSrc(URL.createObjectURL(f))};$('dreset').onclick=()=>setSrc(SAMPLE);
+$('dcap').oninput=e=>{ob.textContent=e.target.value};
+document.querySelector('#dt .dc').classList.add('on');
+})();
+</script></body></html>
